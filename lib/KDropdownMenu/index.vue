@@ -149,7 +149,8 @@
       this.trigger = this.$el.parentElement;
       this.trigger.setAttribute('aria-haspopup', 'menu');
       this.trigger.setAttribute('aria-expanded', false);
-      },
+ },
+
     beforeDestroy() {
       window.removeEventListener('keydown', this.handleOpenMenuNavigation, true);
     },
@@ -180,7 +181,6 @@
         }
 
         this.trigger.setAttribute('aria-expanded', false);
-
         window.removeEventListener('keyup', this.handleKeyUp, true);
       },
       getNextFocusableSibling(focusedElement) {
