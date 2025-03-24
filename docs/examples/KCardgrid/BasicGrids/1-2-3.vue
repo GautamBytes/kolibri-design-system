@@ -1,15 +1,15 @@
 <template>
 
   <KCardGrid
-    layout="1-2-2"
+    layout="1-2-3"
     :skeletonsConfig="skeletonsConfig"
     :loading="loading"
   >
     <DocsKCard
-      v-for="i in 3"
+      v-for="i in 5"
       :key="i"
       :headingLevel="5"
-      :prependTitle="`(${i})`"
+      :prependTitle="'(${i})'"
     />
   </KCardGrid>
 

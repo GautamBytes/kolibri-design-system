@@ -10,7 +10,7 @@
       :key="i"
       :headingLevel="4"
       :orientation="windowBreakpoint < 4 ? 'vertical' : 'horizontal'"
-      :prependTitle="`(${i})`"
+      :prependTitle="'(${i})'"
     />
   </KCardGrid>
 

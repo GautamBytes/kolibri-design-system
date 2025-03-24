@@ -9,7 +9,7 @@
       v-for="i in 3"
       :key="i"
       :headingLevel="5"
-      :prependTitle="`(${i})`"
+      :prependTitle="'(${i})'"
     />
   </KCardGrid>
 

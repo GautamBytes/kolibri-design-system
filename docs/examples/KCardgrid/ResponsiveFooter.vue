@@ -9,9 +9,28 @@
       v-for="i in 2"
       :key="i"
       :headingLevel="4"
-      :orientation="windowBreakpoint < 4 ? 'vertical' : 'horizontal'"
-      :prependTitle="`(${i})`"
-    />
+      :prependTitle="'(${i})'"
+    >
+      <template #footer>
+        <div
+          class="pills"
+          :style="{ color: $themeTokens.annotation }"
+        >
+          <span>
+            <KIcon
+              icon="readSolid"
+              :style="{ fontSize: '13px', position: 'relative', top: '3px' }"
+            />
+            Read
+          </span>
+          <span> Short Activity </span>
+          <template v-if="windowBreakpoint > 3">
+            <span> Biology </span>
+            <span> Ecology </span>
+          </template>
+        </div>
+      </template>
+    </DocsKCard>
   </KCardGrid>
 
 </template>
@@ -34,13 +53,11 @@
             breakpoints: [0, 1, 2, 3, 4, 5, 6, 7],
             orientation: 'vertical',
             thumbnailDisplay: 'large',
-            height: '440px',
+            height: '430px',
           },
           {
             breakpoints: [4, 5, 6, 7],
-            height: '220px',
-            orientation: 'horizontal',
-            thumbnailAlign: 'left',
+            height: '370px',
           },
         ],
       };
@@ -53,3 +70,20 @@
   };
 
 </script>
+
+
+<style lang="scss" scoped>
+
+  .pills {
+    margin-left: -4px;
+
+    span {
+      display: inline-block;
+      padding: 4px 8px;
+      margin: 4px;
+      background-color: #dddddd;
+      border-radius: 4px;
+    }
+  }
+
+</style>
